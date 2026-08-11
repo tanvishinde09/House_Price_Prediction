@@ -1,110 +1,137 @@
-# House Price Prediction
+# 🏡 House Price Prediction
 
-A Machine Learning project for predicting house prices using housing-related features. The project covers data cleaning, exploratory data analysis, feature scaling, model training, evaluation, and model comparison.
+A Machine Learning web application that predicts the estimated market price of a house based on property and surrounding-area characteristics.
 
-## Project Objective
+The project uses **Linear Regression** with **StandardScaler** and provides an interactive **Streamlit** interface for real-time house price prediction.
 
-The objective of this project is to build a machine learning regression model that predicts house prices based on different housing-related features.
+---
 
-## Dataset
+## 🚀 Live Demo
 
-The dataset contains **5,000 records** and **5 input features**.
+🔗 **Streamlit App:** `[YOUR_STREAMLIT_APP_URL](https://housepriceprediction-09.streamlit.app/)`
 
-### Features
+> Replace `YOUR_STREAMLIT_APP_URL` with your deployed Streamlit application link.
 
-* Average Area Income
-* Average Area House Age
-* Average Area Number of Rooms
-* Average Area Number of Bedrooms
-* Area Population
+---
 
-### Target Variable
+## 📌 Project Objective
 
-* Price
+The objective of this project is to build an end-to-end Machine Learning application that can:
 
-## Project Workflow
+* Predict house prices using property-related features
+* Apply data preprocessing and feature scaling
+* Use a trained Linear Regression model for prediction
+* Convert predicted prices from USD to INR
+* Provide an interactive and user-friendly web interface
+* Deploy the Machine Learning application using Streamlit
 
-1. Data Loading
-2. Data Inspection
-3. Data Cleaning
-4. Exploratory Data Analysis (EDA)
-5. Saving the Cleaned Dataset
-6. Train-Test Split
-7. Feature Scaling
-8. Model Training
-9. Model Evaluation
-10. Model Comparison
-11. Best Model Selection
-12. Model Saving
+---
 
-## Machine Learning Models
+## 🧠 Machine Learning Approach
 
-The following regression models were trained and compared:
+The application uses **Linear Regression** to estimate house prices.
 
-* Linear Regression
-* Random Forest Regressor
+### Input Features
 
-## Model Evaluation
+| Feature                             | Description                             |
+| ----------------------------------- | --------------------------------------- |
+| 💰 Average Area Income              | Average income of residents in the area |
+| 🏚️ Average Area House Age          | Average age of houses in the area       |
+| 🛋️ Average Area Number of Rooms    | Average number of rooms                 |
+| 🛏️ Average Area Number of Bedrooms | Average number of bedrooms              |
+| 👥 Area Population                  | Population of the surrounding area      |
 
-The models were evaluated using:
+### Prediction Pipeline
 
-* Mean Absolute Error (MAE)
-* Mean Squared Error (MSE)
-* Root Mean Squared Error (RMSE)
-* R² Score
+```text
+User Input
+    ↓
+Feature Scaling
+    ↓
+StandardScaler
+    ↓
+Linear Regression Model
+    ↓
+Predicted House Price
+    ↓
+USD → INR Conversion
+    ↓
+Display Result
+```
 
-### Results
+---
 
-| Model             |       MAE |               MSE |       RMSE |   R² Score |
-| ----------------- | --------: | ----------------: | ---------: | ---------: |
-| Linear Regression | 80,879.10 | 10,089,009,299.50 | 100,444.06 | **0.9180** |
-| Random Forest     | 94,511.34 | 14,391,497,208.58 | 119,964.57 |     0.8830 |
+## ✨ Features
 
-### Best Model
+* 🏡 Interactive house price prediction
+* 🔮 Real-time prediction using a trained ML model
+* 💰 Price displayed in USD
+* 🇮🇳 Price converted and displayed in INR
+* 📊 Property summary after prediction
+* 🔄 Reset input values option
+* 🎨 Modern and responsive Streamlit UI
+* 🤖 Linear Regression based prediction
+* ⚡ Fast prediction using saved model files
 
-**Linear Regression** performed better on the test dataset.
+---
 
-* **R² Score:** 0.9180
-* **RMSE:** 100,444.06
+## 🛠️ Technologies Used
 
-The trained Linear Regression model and StandardScaler were saved using Joblib.
-
-## Technologies Used
+### Programming Language
 
 * Python
-* Pandas
-* NumPy
-* Scikit-learn
-* Matplotlib
-* Joblib
-* Jupyter Notebook
 
-## Project Structure
+### Machine Learning
+
+* Scikit-learn
+* Linear Regression
+* StandardScaler
+
+### Data & Numerical Computing
+
+* NumPy
+
+### Model Serialization
+
+* Joblib
+
+### Web Application
+
+* Streamlit
+
+### Development Tools
+
+* Jupyter Notebook
+* VS Code
+* Git
+* GitHub
+
+---
+
+## 📂 Project Structure
 
 ```text
 House-Price-Prediction/
 │
-├── data/
-│   ├── raw/
-│   └── processed/
-│       └── clean_housing.csv
+├── app.py
 │
-├── models/
-│   ├── linear_regression_model.pkl
-│   └── standard_scaler.pkl
-│
-├── house_price_prediction.ipynb
 ├── requirements.txt
+│
 ├── README.md
-└── .gitignore
+│
+└── models/
+    ├── linear_regression_model.pkl
+    └── standard_scaler.pkl
 ```
 
-## How to Run
+---
+
+## ⚙️ Installation & Setup
 
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/YOUR_USERNAME/House-Price-Prediction.git
 ```
 
 ### 2. Navigate to the project directory
@@ -113,39 +140,124 @@ git clone <repository-url>
 cd House-Price-Prediction
 ```
 
-### 3. Install the required dependencies
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Open the Jupyter Notebook
+### 4. Run the Streamlit application
 
 ```bash
-jupyter notebook
+streamlit run app.py
 ```
 
-Open `house_price_prediction.ipynb` and run the cells sequentially.
+The application will open in your browser.
 
-## Key Learning Outcomes
+---
 
-* Data cleaning and preprocessing
-* Exploratory Data Analysis
-* Train-test splitting
-* Feature scaling using StandardScaler
-* Regression model training
-* Model evaluation and comparison
-* Saving trained ML models using Joblib
+## 📊 Example Prediction
 
-## Future Improvements
+For example, the application accepts values such as:
 
-* Hyperparameter tuning
-* Testing additional regression algorithms
-* Building a user interface for predictions
-* Deploying the trained model as a web application
+```text
+Average Area Income        → 60000
+Average Area House Age    → 5
+Average Area Rooms        → 6
+Average Area Bedrooms     → 3
+Area Population           → 35000
+```
 
-## Author
+The trained model processes these values and returns an estimated house price.
+
+The application displays the result in both:
+
+* 🇺🇸 USD
+* 🇮🇳 INR
+
+---
+
+## 🔄 Reset Function
+
+The **Reset Input Values** button restores the default input values:
+
+```text
+Average Area Income        → 60000
+Average Area House Age    → 5
+Average Area Rooms        → 6
+Average Area Bedrooms     → 3
+Area Population           → 35000
+```
+
+This allows users to quickly start a new prediction.
+
+---
+
+## 📈 Model Information
+
+**Algorithm:** Linear Regression
+
+**Preprocessing:** StandardScaler
+
+The input features are scaled before being passed to the trained Linear Regression model.
+
+The trained model and scaler are saved using **Joblib** and loaded by the Streamlit application at runtime.
+
+---
+
+## 🌐 Deployment
+
+The application is deployed using **Streamlit Community Cloud**.
+
+### Deployment Stack
+
+```text
+GitHub
+   ↓
+Streamlit Community Cloud
+   ↓
+Streamlit Application
+```
+
+---
+
+## 🔮 Future Improvements
+
+Possible future enhancements include:
+
+* 📊 Add interactive data visualizations
+* 📈 Add model performance metrics
+* 💱 Use a live USD/INR exchange rate
+* 🏘️ Add more property-related features
+* 🤖 Compare multiple regression algorithms
+* 📱 Further optimize the interface for mobile devices
+* 📉 Display prediction confidence or an estimated price range
+
+---
+
+## 🎯 Learning Outcomes
+
+Through this project, I worked with:
+
+* Data preprocessing
+* Feature scaling
+* Linear Regression
+* Model training and serialization
+* Machine Learning prediction pipelines
+* Streamlit application development
+* Git and GitHub
+* Cloud deployment
+
+---
+
+## 👩‍💻 Author
 
 **Tanvi Shinde**
 
 B.Tech Data Science 
+
+---
+
+## ⭐ Project
+
+If you find this project useful, consider giving the repository a ⭐ on GitHub.
