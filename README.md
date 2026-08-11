@@ -8,9 +8,7 @@ The project uses **Linear Regression** with **StandardScaler** and provides an i
 
 ## 🚀 Live Demo
 
-🔗 **Streamlit App:** `[YOUR_STREAMLIT_APP_URL](https://housepriceprediction-09.streamlit.app/)`
-
-> Replace `YOUR_STREAMLIT_APP_URL` with your deployed Streamlit application link.
+🔗 **Streamlit App:** `https://housepriceprediction-09.streamlit.app/`
 
 ---
 
